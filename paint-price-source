@@ -1,0 +1,50 @@
+#include <iostream>
+
+using namespace std;
+    double h; // for height
+    double w; //for width
+    double s;// wall dimenion
+    int squared;
+    
+void wall(){
+   cout << "Enter wall height: ";
+   cin >> h;
+   cout << "enter wall width: ";
+   cin >> w;
+   s = h * w; // hieght * width = square footage
+   cout << "wall is " << s << " square feet \n";
+   squared = s/400;
+   if(squared < 1){
+        cout << "it will take 1 gallon of paint \n";
+    }else{
+        cout << "it will take " << squared << " gallons of paint \n";
+    }
+}
+
+
+void paintprice(){
+    char choice;
+    double pricetax;
+    cout << "r for regular & p for premium \n";
+    cin >> choice;
+    int pricereg = squared*20;
+    int pricep = squared*30;;
+  
+   if(choice == 'r'){
+       pricereg = squared*20;
+       pricetax = ((pricereg/8.52)+pricereg);
+       cout << pricetax;
+       
+   }else{
+       pricep = squared*30;
+       pricetax = ((pricep/8.52)+pricep);
+       cout << pricetax;
+   }
+}
+
+int main()
+{
+    wall();
+    paintprice();
+    
+}
