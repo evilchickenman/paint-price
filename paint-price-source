@@ -44,11 +44,22 @@ void paintprice(){
     int pricep = squared*30;;
   
    if(choice == 'r'){
+       if(squared < 1){
+           pricereg = 20;
+           pricetax = ((pricereg/8.52)+pricereg);
+           cout << pricetax;
+           
+       }else{
        pricereg = squared*20;
        pricetax = ((pricereg/8.52)+pricereg);
        cout << pricetax;
-       
+       }  
    }else{
+       if(squared < 1){
+           pricep=30;
+        pricetax = ((pricep/8.52)+pricep);
+       cout << pricetax;   
+       }
        pricep = squared*30;
        pricetax = ((pricep/8.52)+pricep);
        cout << pricetax;
