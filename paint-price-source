@@ -5,13 +5,26 @@ using namespace std;
     double w; //for width
     double s;// wall dimenion
     int squared;
+    int windowd;
+
+void window(){
+    int windowh;
+    int windoww;
+    
+    cout << "enter window height: ";
+    cin >> windowh;
+    cout << "enter window width: ";
+    cin >> windoww;
+    windowd = windowh*windoww;
+
+}
     
 void wall(){
    cout << "Enter wall height: ";
    cin >> h;
    cout << "enter wall width: ";
    cin >> w;
-   s = h * w; // hieght * width = square footage
+   s = h * w - windowd; // hieght * width = square footage
    cout << "wall is " << s << " square feet \n";
    squared = s/400;
    if(squared < 1){
@@ -44,6 +57,7 @@ void paintprice(){
 
 int main()
 {
+    window();
     wall();
     paintprice();
     
